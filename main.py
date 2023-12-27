@@ -40,11 +40,10 @@ async def search_messages(ctx, user_mention):
 
   if messages:
     await ctx.send(
-        f'Total messages found from {target_user} aks {user_mention}: {len(messages)}'
+        f'Total messages found from {target_user} aka {user_mention}: {len(messages)}'
     )
   else:
-    await ctx.send(
-        f"No messages found from {target_user.name} with the specified query.")
+    await ctx.send(f"No messages found from {target_user.name}")
 
 
 # Replace 'YOUR_BOT_TOKEN' with your actual bot token
