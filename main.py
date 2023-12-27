@@ -27,6 +27,7 @@ async def search_messages(ctx, user_mention):
 
   # Get the user object
   target_user = bot.get_user(user_id)
+  print(target_user)
 
   if target_user is None:
     return await ctx.send("User not found.")
@@ -38,7 +39,9 @@ async def search_messages(ctx, user_mention):
       messages.append(message)
 
   if messages:
-    await ctx.send(f'Total messages found: {len(messages)}')
+    await ctx.send(
+        f'Total messages found from {target_user} aks {user_mention}: {len(messages)}'
+    )
   else:
     await ctx.send(
         f"No messages found from {target_user.name} with the specified query.")
