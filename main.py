@@ -14,9 +14,8 @@ async def on_ready():
 
 
 @bot.command(name='search')
-async def search_messages(ctx, user_mention, query):
+async def search_messages(ctx, user_mention):
   print(f"User Mention: {user_mention}")
-  print(f"Query: {query}")
 
   # Extract user ID from mention
   try:
