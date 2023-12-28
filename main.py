@@ -1,4 +1,5 @@
 import os
+
 import discord
 from discord.ext import commands
 
@@ -11,6 +12,12 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 @bot.event
 async def on_ready():
   print(f'Logged in as {bot.user}')
+
+  channel_id = 776762947691216898
+  channel = bot.get_channel(channel_id)
+
+  if channel:
+    await channel.send("Hello! I'm back online.")
 
 
 @bot.command(name='search')
